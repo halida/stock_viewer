@@ -23,7 +23,7 @@
 </canvas>
 <script type="text/javascript">
   $(function(){
-  create_stock_display('stock_display', [
+  create_stock_display('#stock_display', [
   <% @stock.records.where(:interval => 'minute').each do |r| %>
   <%= "[#{r.o},#{r.c},#{r.h},#{r.l}],"%>
   <% end %>    
