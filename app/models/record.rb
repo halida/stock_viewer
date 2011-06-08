@@ -1,6 +1,6 @@
 class Record < ActiveRecord::Base
-  validates_presence_of :name, :type
+  validates_presence_of :interval
 
-  TYPES = ["day", "hour", "minute"]
-  validates :type, :inclusion => TYPES
+  INTERVALS = ["day", "hour", "minute"]
+  validates :interval, :inclusion => INTERVALS
 end

@@ -1,8 +1,8 @@
 class CreateRecords < ActiveRecord::Migration
   def self.up
     create_table :records do |t|
-      t.string :name
-      t.string :type
+      t.references :stock
+      t.string :interval
       t.datetime :start
       t.integer :o
       t.integer :h

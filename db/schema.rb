@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(:version => 20110608023616) do
 
   create_table "records", :force => true do |t|
-    t.string   "name"
-    t.string   "type"
+    t.integer  "stock_id"
+    t.string   "interval"
     t.datetime "start"
     t.integer  "o"
     t.integer  "h"

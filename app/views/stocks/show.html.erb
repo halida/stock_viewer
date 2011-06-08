@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "stock_display.js" %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -14,6 +18,37 @@
   <b>Desc:</b>
   <%= @stock.desc %>
 </p>
+
+<canvas id="stock_display" style="width: 600px; height 400px;">
+</canvas>
+<script type="text/javascript">
+  $(function(){
+  create_stock_display('stock_display', [
+  <% @stock.records.where(:interval => 'minute').each do |r| %>
+  <%= "[#{r.o},#{r.c},#{r.h},#{r.l}],"%>
+  <% end %>    
+  ])
+  });
+</script>
+
+<table id="records">
+  <th>
+    <td>start</td>
+    <td>o</td>
+    <td>c</td>
+    <td>h</td>
+    <td>l</td>
+  </th>
+  <% @stock.records.where(:interval => 'minute').each do |r| %>
+  <tr>
+    <td><%=r.start%></td>
+    <td><%=r.o%></td>
+    <td><%=r.c%></td>
+    <td><%=r.h%></td>
+    <td><%=r.l%></td>
+  </tr>
+  <% end %>
+</table>
 
 
 <%= link_to 'Edit', edit_stock_path(@stock) %> |
