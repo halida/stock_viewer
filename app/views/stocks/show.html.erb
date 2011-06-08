@@ -32,13 +32,13 @@
 </script>
 
 <table id="records">
-  <th>
+  <tr>
     <td>start</td>
     <td>o</td>
     <td>c</td>
     <td>h</td>
     <td>l</td>
-  </th>
+  </tr>
   <% @stock.records.where(:interval => 'minute').each do |r| %>
   <tr>
     <td><%=r.start%></td>

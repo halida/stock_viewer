@@ -4,10 +4,10 @@ class CreateRecords < ActiveRecord::Migration
       t.references :stock
       t.string :interval
       t.datetime :start
-      t.integer :o
-      t.integer :h
-      t.integer :l
-      t.integer :c
+      t.float :o
+      t.float :h
+      t.float :l
+      t.float :c
 
       t.timestamps
     end
