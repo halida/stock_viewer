@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  type: MyString
+  start: 2011-06-08 10:36:16
+  o: 1
+  h: 1
+  l: 1
+  c: 1
+
+two:
+  name: MyString
+  type: MyString
+  start: 2011-06-08 10:36:16
+  o: 1
+  h: 1
+  l: 1
+  c: 1
