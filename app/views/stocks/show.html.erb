@@ -24,7 +24,7 @@
 <script type="text/javascript">
   $(function(){
   create_stock_display('#stock_display', [
-  <% @stock.records.where(:interval => 'minute').each do |r| %>
+  <% @stock.records.where(:interval => 'minute').limit(30).each do |r| %>
   <%= "[#{r.o},#{r.c},#{r.h},#{r.l}],"%>
   <% end %>    
   ])
@@ -39,13 +39,13 @@
     <td>h</td>
     <td>l</td>
   </tr>
-  <% @stock.records.where(:interval => 'minute').each do |r| %>
+  <% @stock.records.where(:interval => 'minute').limit(30).each do |r| %>
   <tr>
     <td><%=r.start%></td>
-    <td><%=r.o%></td>
-    <td><%=r.c%></td>
-    <td><%=r.h%></td>
-    <td><%=r.l%></td>
+    <td><%="%.2f" % r.o%></td>
+    <td><%="%.2f" % r.c%></td>
+    <td><%="%.2f" % r.h%></td>
+    <td><%="%.2f" % r.l%></td>
   </tr>
   <% end %>
 </table>
